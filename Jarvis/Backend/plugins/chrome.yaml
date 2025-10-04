@@ -1,0 +1,20 @@
+actions:
+- name: open
+  pattern: open
+  steps:
+  - image: chrome_icon.png
+    type: click
+  - seconds: 2
+    type: wait
+- name: search
+  parameters:
+  - query
+  pattern: search for (.*)
+  steps:
+  - image: search_bar.png
+    type: click
+  - text: '{query}'
+    type: type
+  - key: enter
+    type: press
+app: Chrome
